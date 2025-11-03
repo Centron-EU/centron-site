@@ -19,12 +19,11 @@
 # in the templates via {{ site.myvariable }}.
 
 title: Centron
-email: tn.meir@centrontest.nl
+email: tmeir@centrontest.nl
 description: >- # this means to ignore newlines until "baseurl:"
   Centrum voor onderzoek van adsorptiemiddelen
 baseurl: "/" # the subpath of your site, e.g. /blog
 url: "https://centron.eu" # the base hostname & protocol for your site, e.g. http://example.com
-github_username: centron-eu
 
 data:
   translations:
