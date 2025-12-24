@@ -1,37 +1,44 @@
 <footer class="site-footer h-card">
   <data class="u-url" href="{{ "/" | relative_url }}"></data>
 
-  <div class="wrapper">
+  <div class="wrapper footer-wrapper">
 
-    <h2 class="footer-heading">{{ site.title | escape }}</h2>
-
-    <div class="footer-col-wrapper">
-      <div class="footer-col footer-col-1">
-        <ul class="contact-list">
-          <li class="p-name">
-            {%- if site.author -%}
-              {{ site.author | escape }}
-            {%- else -%}
-              {{ site.title | escape }}
-            {%- endif -%}
+    <div class="footer-content">
+      <div class="footer-col-wrapper">
+        <div class="footer-col footer-col-1">
+          <h3 class="footer-heading">{{ site.title | escape }}</h3>
+          <ul class="contact-list">
+            <li class="p-name">
+              {%- if site.author -%}
+                {{ site.author | escape }}
+              {%- else -%}
+                {{ site.title | escape }}
+              {%- endif -%}
             </li>
             {%- if site.email -%}
             <li><a class="u-email" href="mailto:{{ site.email }}">{{ site.email }}</a></li>
             {%- endif -%}
-        </ul>
-        {%- include social.html -%}
-      </div>
+          </ul>
+          {%- include social.html -%}
+        </div>
 
-      <div class="footer-col footer-col-2">
-        <ul>
-          <li><a href="/"><img src="/assets/nl.png" class="flag">Nederlands</a></li>
-          <li><a href="/en/"><img src="/assets/uk.png" class="flag">English</a></li>
-        </ul>
-      </div>
+        <div class="footer-col footer-col-2">
+          <h3 class="footer-heading">{{ site.data.translations[page.lang].language | default: "Language" }}</h3>
+          <ul class="language-list">
+            <li><a href="/" class="language-link"><img src="/assets/nl.png" class="flag" alt="Nederlands flag">Nederlands</a></li>
+            <li><a href="/en/" class="language-link"><img src="/assets/uk.png" class="flag" alt="English flag">English</a></li>
+          </ul>
+        </div>
 
-      <div class="footer-col footer-col-3">
-        <p>{{- site.description | escape -}}</p>
+        <div class="footer-col footer-col-3">
+          <h3 class="footer-heading">{{ site.data.translations[page.lang].about | default: "About" }}</h3>
+          <p class="footer-description">{{- site.description | escape -}}</p>
+        </div>
       </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="copyright">&copy; {{ 'now' | date: "%Y" }} {{ site.title | escape }}. All rights reserved.</p>
     </div>
 
   </div>
